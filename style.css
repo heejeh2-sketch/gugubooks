@@ -13,7 +13,7 @@
   --text-primary: #f0ede8;
   --text-secondary: #888880;
   --accent: #c8ab82;
-  --font-sans: 'DM Sans', 'Noto Sans KR', system-ui, sans-serif;
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 html {
