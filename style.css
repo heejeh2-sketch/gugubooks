@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-right: 25vw;
+  margin-right: 32.5vw;
 }
 
 
@@ -277,22 +277,32 @@ footer {
   position: fixed;
   top: 0;
   right: 0;
-  width: 25vw;
+  width: 32.5vw;
   height: 100vh;
   border-left: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2.5rem;
+  gap: 2.8rem;
+  padding: 3rem 2.5rem;
   background: var(--bg);
   z-index: 50;
+  overflow: hidden;
 }
 
+.book-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.book-item:nth-child(1) { margin-left: 1.5rem; }
+.book-item:nth-child(2) { margin-left: 3.5rem; }
+.book-item:nth-child(3) { margin-left: 0.5rem; }
+
 .book-cover {
-  width: 100%;
-  max-width: 130px;
+  flex-shrink: 0;
+  width: 80px;
   aspect-ratio: 2 / 3;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -301,6 +311,28 @@ footer {
 
 .book-cover:hover {
   border-color: var(--accent);
+}
+
+.book-info {
+  overflow: hidden;
+  padding-top: 0.2rem;
+}
+
+.book-info .book-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.book-info p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  white-space: normal;
 }
 
 
@@ -315,6 +347,7 @@ footer {
     display: none;
   }
 }
+
 
 @media (max-width: 640px) {
   header {
