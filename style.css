@@ -30,6 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-right: 25vw;
 }
 
 
@@ -274,7 +275,50 @@ footer {
 }
 
 
+/* ─── Book Shelf ──────────────────────────────────── */
+
+.book-shelf {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: var(--bg);
+  z-index: 50;
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 130px;
+  aspect-ratio: 2 / 3;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.book-cover:hover {
+  border-color: var(--accent);
+}
+
+
 /* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 768px) {
+  body {
+    margin-right: 0;
+  }
+
+  .book-shelf {
+    display: none;
+  }
+}
 
 @media (max-width: 640px) {
   header {
