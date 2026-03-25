@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도서출판 구구</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <header>
+    <span class="logo">도서출판 구구</span>
+    <nav>
+      <a href="mailto:hello@gugubooks.kr">문의</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-label">Est. 2025</div>
+      <h1>
+        생각이<br />
+        <em>머무는 곳</em>
+      </h1>
+      <p class="hero-desc">
+        철학 · 심리학 · 인류학
+      </p>
+    </section>
+
+    <section class="statement">
+      <p>
+        우리는 오래된 질문들을 다시 꺼냅니다.<br />
+        인간이란 무엇인지, 어떻게 살아야 하는지,<br />
+        우리는 어디서 왔는지.
+      </p>
+    </section>
+
+    <section class="coming-soon">
+      <div class="coming-soon-inner">
+        <span class="label">Coming Soon</span>
+        <h2>첫 번째 책을<br />준비하고 있습니다.</h2>
+        <p>새로운 소식을 받아보세요.</p>
+        <form class="subscribe-form" onsubmit="handleSubmit(event)">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit">알림 받기</button>
+        </form>
+        <p class="form-note" id="form-note"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>도서출판 구구</span>
+    <span class="footer-right">hello@gugubooks.kr</span>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Email subscribe
+    function handleSubmit(e) {
+      e.preventDefault();
+      const note = document.getElementById('form-note');
+      note.textContent = '등록되었습니다. 감사합니다.';
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>

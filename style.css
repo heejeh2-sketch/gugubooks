@@ -1,0 +1,307 @@
+/* ─── Reset & Base ─────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0e0e0e;
+  --surface: #161616;
+  --border: #2a2a2a;
+  --text-primary: #f0ede8;
+  --text-secondary: #888880;
+  --accent: #c8ab82;
+  --font-serif: 'DM Serif Display', 'Noto Serif KR', Georgia, serif;
+  --font-sans: 'Noto Sans KR', system-ui, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ─── Header ──────────────────────────────────────── */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+header.scrolled {
+  background: rgba(14, 14, 14, 0.92);
+  backdrop-filter: blur(12px);
+  border-color: var(--border);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--text-primary);
+}
+
+
+/* ─── Hero ────────────────────────────────────────── */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+
+/* ─── Statement ───────────────────────────────────── */
+
+.statement {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.statement p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-primary);
+  max-width: 720px;
+}
+
+
+/* ─── Coming Soon ─────────────────────────────────── */
+
+.coming-soon {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 3rem;
+}
+
+.coming-soon-inner {
+  max-width: 480px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.3em 0.8em;
+  margin-bottom: 2rem;
+}
+
+.coming-soon h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.coming-soon > .coming-soon-inner > p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.subscribe-form:focus-within {
+  border-color: var(--accent);
+}
+
+.subscribe-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.subscribe-form input::placeholder {
+  color: var(--text-secondary);
+}
+
+.subscribe-form button {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--border);
+  padding: 0.85rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.subscribe-form button:hover {
+  color: var(--bg);
+  background: var(--accent);
+  border-left-color: var(--accent);
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-top: 1rem;
+  letter-spacing: 0.04em;
+  min-height: 1.2em;
+}
+
+
+/* ─── Footer ──────────────────────────────────────── */
+
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+
+/* ─── Scroll behavior ──────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1,
+  .statement p,
+  .coming-soon-inner {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .statement p { animation-delay: 0.1s; }
+  .coming-soon-inner { animation-delay: 0.15s; }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 640px) {
+  header {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .hero,
+  .statement,
+  .coming-soon {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form button {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+}
