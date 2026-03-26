@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-left: 32.5vw;
+  margin-right: 32.5vw;
 }
 
 
@@ -39,8 +39,8 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 32.5vw;
-  right: 0;
+  left: 0;
+  right: 32.5vw;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -292,10 +292,10 @@ footer {
 .book-shelf {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 32.5vw;
   height: 100vh;
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
   background: var(--bg);
   z-index: 50;
   overflow: hidden;
@@ -337,11 +337,11 @@ footer {
 
 @media (max-width: 768px) {
   body {
-    margin-left: 0;
+    margin-right: 0;
   }
 
   header {
-    left: 0;
+    right: 0;
   }
 
   .book-shelf {
