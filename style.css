@@ -81,7 +81,7 @@ nav a:hover {
 /* ─── Hero ────────────────────────────────────────── */
 
 .hero {
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,7 +119,7 @@ nav a:hover {
 /* ─── Statement ───────────────────────────────────── */
 
 .statement {
-  min-height: 60vh;
+  min-height: 45vh;
   display: flex;
   align-items: center;
   padding: 6rem 3rem;
@@ -139,7 +139,7 @@ nav a:hover {
 /* ─── Coming Soon ─────────────────────────────────── */
 
 .coming-soon {
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   padding: 6rem 3rem;
@@ -317,7 +317,7 @@ footer {
 
 .book-cover {
   position: absolute;
-  width: 88px;
+  width: 176px;
   transition: opacity 0.2s;
 }
 
