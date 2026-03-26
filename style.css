@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-right: 32.5vw;
+  margin-left: 32.5vw;
 }
 
 
@@ -39,7 +39,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 32.5vw;
   right: 0;
   z-index: 100;
   display: flex;
@@ -271,15 +271,31 @@ footer {
 }
 
 
+/* ─── Image Sections ─────────────────────────────── */
+
+.img-section {
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+}
+
+.img-section svg {
+  width: 100%;
+  height: 100%;
+}
+
+
 /* ─── Book Shelf ──────────────────────────────────── */
 
 .book-shelf {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 32.5vw;
   height: 100vh;
-  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   background: var(--bg);
   z-index: 50;
   overflow: hidden;
@@ -299,14 +315,17 @@ footer {
 .book-cover {
   position: absolute;
   width: 88px;
-  aspect-ratio: 2 / 3;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  transition: border-color 0.2s;
+  transition: opacity 0.2s;
+}
+
+.book-cover svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .book-cover:hover {
-  border-color: var(--accent);
+  opacity: 0.8;
 }
 
 .bc-1 { top: 12%; left: 18%; }
@@ -318,7 +337,11 @@ footer {
 
 @media (max-width: 768px) {
   body {
-    margin-right: 0;
+    margin-left: 0;
+  }
+
+  header {
+    left: 0;
   }
 
   .book-shelf {
